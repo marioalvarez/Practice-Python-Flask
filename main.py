@@ -1,11 +1,11 @@
-from flask import Flask, redirect, url_for
+from flask import Flask, redirect, url_for, render_template
 
 app = Flask(__name__)
 
 
 @app.route('/')
 def index():
-    return "Aprendiendo Flask con Mario Alvarez"
+    return render_template('index.html')
 
 
 @app.route('/informacion')
@@ -17,11 +17,7 @@ def informacion(nombre=None, apellido=None):
     if nombre != None and apellido != None:
         texto = f"<h3>Bienvenido, {nombre} {apellido}</h3>"
 
-    return f"""
-            <h1>Pagina de informacion</h1>
-            <p>Esta es la pagina de información</p>
-            {texto}
-    """
+    return render_template('informacion.html', texto=texto)
 
 
 @app.route('/contacto')
