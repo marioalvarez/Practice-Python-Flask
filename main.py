@@ -26,12 +26,12 @@ def contacto(redireccion=None):
 
     if redireccion is not None:
         return redirect(url_for('lenguajes'))
-    return "<h1>Pagina de contacto</h1>"
+    return render_template('contacto.html')
 
 
 @app.route('/lenguajes-de-programacion')
 def lenguajes():
-    return "<h1>Pagina de Lenguajes</h1>"
+    return render_template('lenguajes.html')
 
 
 if __name__ == '__main__':
