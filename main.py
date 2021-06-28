@@ -8,12 +8,12 @@ def index():
     return "Aprendiendo Flask con Mario Alvarez"
 
 
-@app.route('/informacion/<nombre>/<apellidos>')
-def informacion(nombre, apellidos):
+@app.route('/informacion/<string:nombre>/<string:apellidos>/<int:anios>')
+def informacion(nombre, apellidos, anios):
     return f"""
             <h1>Pagina de informacion</h1>
             <p>Esta es la pagina de información</p>
-            <h3>Bienvenido, {nombre}{apellidos}</h3>
+            <h3>Bienvenido, {nombre}{apellidos} y tiene {anios} de edad</h3>
     """
 
 
